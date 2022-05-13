@@ -1,0 +1,13 @@
+---
+- hosts: localhost  # put localhost.  We are processing against aws
+  connection: local  # put local.  We are processing against aws
+  gather_facts: False  # don't gather facts against localhost
+  vars:
+    aws_access_key: 'AKIASGNLB4TAXPNXZEFJ'
+    aws_secret_key: '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'
+  tasks:
+    - s3_bucket:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        name: pradeep7482
+        state: present
